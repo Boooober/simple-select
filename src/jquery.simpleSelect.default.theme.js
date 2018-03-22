@@ -1,0 +1,1 @@
+import './jquery.simpleSelect.default.theme.scss';

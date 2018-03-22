@@ -3,7 +3,8 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 module.exports = {
     entry: {
-        'jquery.simpleSelect': './jquery.simpleSelect'
+        'jquery.simpleSelect': './src/jquery.simpleSelect',
+        'jquery.simpleSelect.default.theme': './src/jquery.simpleSelect.default.theme'
     },
     output: {
         path: path.resolve(__dirname, './dist'),

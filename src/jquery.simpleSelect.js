@@ -1,4 +1,4 @@
-import './simple-select.scss';
+import './jquery.simpleSelect.scss';
 
 ($ => {
     $.fn.extend({
