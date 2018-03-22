@@ -1,0 +1,35 @@
+{
+  "name": "simple-select",
+  "version": "1.0.0",
+  "description": "Simple customizable dropdown",
+  "main": "./dist/jquery.simpleSelect.min.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Boooober/simple-select.git"
+  },
+  "keywords": [
+    "Select",
+    "Dropdown"
+  ],
+  "author": "Mykyta Slobodian",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Boooober/simple-select/issues"
+  },
+  "homepage": "https://github.com/Boooober/simple-select#readme",
+  "devDependencies": {
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.13"
+  }
+}
