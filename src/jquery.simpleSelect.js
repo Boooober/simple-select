@@ -5,9 +5,10 @@ import './jquery.simpleSelect.scss';
         simpleSelect(config) {
             const options = $.extend({
                 selector: 'simple-select',
-                theme: 'simple-select-theme_default'
+                theme: 'simple-select-theme_default',
+                withLabels: true
             }, config);
-            const { selector, theme } = options;
+            const { selector, theme, withLabels } = options;
 
             return this.each(function() {
                 const $this = $(this);
@@ -19,13 +20,13 @@ import './jquery.simpleSelect.scss';
                 const $options = $this.children('option');
 
                 const $trigger = $(`<div class="${dropdownSelector}__trigger"/>`)
-                    .text($options.filter(':selected').text().trim());
+                    .html(getLabel($options.filter(':selected')));
 
                 const $list = $(`<ul class="${dropdownSelector}__list"/>`);
 
                 for (let i = 0; i < $options.length; i++) {
                     $(`<li/>`, {
-                        text: $options.eq(i).text().trim(),
+                        html: getLabel($options.eq(i)),
                         rel: $options.eq(i).val(),
                         'class': `${dropdownSelector}__option`
                     })
@@ -64,11 +65,19 @@ import './jquery.simpleSelect.scss';
                     $(this)
                         .addClass(`${dropdownSelector}__option_active`);
                     $trigger
-                        .text($(this).text());
+                        .html($(this).html());
                     $this
                         .val($(this).attr('rel'))
                         .trigger('change');
                 });
+
+                function getLabel($option) {
+                    const label = $option.attr('label');
+                    const text = $option.text().trim();
+                    return label && withLabels
+                        ? `<b class="${dropdownSelector}__label">${label}</b> ${text}`
+                        : text;
+                }
 
                 function closeHandler () {
                     $trigger.removeClass('active');

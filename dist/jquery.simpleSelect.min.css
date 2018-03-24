@@ -1,11 +1,12 @@
 .simple-select {
   width: 1px;
   height: 1px;
-  padding: 0;
   margin: -1px;
+  padding: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  border-color: transparent;
+  background: transparent;
+  border: 0 solid transparent;
   border-bottom-width: 32px; }
   .simple-select_loaded {
     position: absolute;
