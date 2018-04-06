@@ -1,6 +1,6 @@
 import './jquery.simpleSelect.scss';
 
-($ => {
+(($, undefined) => {
     $.fn.extend({
         simpleSelect(config) {
             const options = $.extend({
@@ -15,7 +15,9 @@ import './jquery.simpleSelect.scss';
                 const dropdownSelector = `${selector}-dropdown`;
 
                 $this.addClass(`${selector} ${selector}_loaded`);
-                $this.wrap(`<div class="${selector}-wrapper ${theme}"/>`);
+                $this.wrap(`<div class="${selector}-wrapper ${theme}"/>`)
+                    .parent()
+                    .toggleClass(`${selector}-wrapper_block`, $this.attr('block') !== undefined);
 
                 const $options = $this.children('option');
 
